@@ -1,0 +1,150 @@
+{
+  "version": "0.1.0",
+  "name": "doors_vs_wheels",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "votesCounter",
+          "isMut": true,
+          "isSigner": false,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "type": "string",
+                "value": "votes_counter"
+              }
+            ]
+          }
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "vote",
+      "accounts": [
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "userVote",
+          "isMut": true,
+          "isSigner": false,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "type": "string",
+                "value": "user_vote"
+              },
+              {
+                "kind": "account",
+                "type": "publicKey",
+                "path": "user"
+              }
+            ]
+          }
+        },
+        {
+          "name": "votesCounter",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "vote",
+          "type": {
+            "defined": "VoteOptions"
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "VotesCounter",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "doors",
+            "type": "u64"
+          },
+          {
+            "name": "wheels",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserVote",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "vote",
+            "type": {
+              "defined": "VoteOptions"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "VoteOptions",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Doors"
+          },
+          {
+            "name": "Wheels"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "AlreadyVoted",
+      "msg": "User already voted"
+    },
+    {
+      "code": 6001,
+      "name": "AlreadyInitialized",
+      "msg": "Votes counter already initialize"
+    }
+  ],
+  "metadata": {
+    "address": "5pqnMDYsTfRAU1egcXoKgD8XrMy3yPUTDz9GMDCyvU8t"
+  }
+}

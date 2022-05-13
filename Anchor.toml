@@ -1,0 +1,14 @@
+[features]
+seeds = true #set to true to enable automatic PDA derivation in TS builder API
+[programs.localnet]
+doors_vs_wheels = "5pqnMDYsTfRAU1egcXoKgD8XrMy3yPUTDz9GMDCyvU8t"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/Users/nicolasft/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
