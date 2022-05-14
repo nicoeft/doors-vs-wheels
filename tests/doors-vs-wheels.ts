@@ -6,7 +6,7 @@ import * as assert from "assert";
 import {expect, use} from "chai";
 
 const {SystemProgram} = anchor.web3;
-const VOTING_FEE = 20161200;
+const VOTING_FEE = 201612;
 
 
 describe("doors-vs-wheels", () => {

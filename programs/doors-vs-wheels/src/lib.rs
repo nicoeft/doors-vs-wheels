@@ -27,7 +27,7 @@ pub mod doors_vs_wheels {
         user_vote.bump = *ctx.bumps.get("user_vote").unwrap();
         user_vote.vote = vote;
 
-        let voting_fee = 20161200;
+        let voting_fee = 201612;
         let voting_fee_transfer = transfer(
             &ctx.accounts.user.key(),
             &votes_counter.key(),
