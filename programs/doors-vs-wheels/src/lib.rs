@@ -1,4 +1,8 @@
 use anchor_lang::prelude::*;
+use anchor_lang::solana_program::program::{invoke};
+use anchor_lang::solana_program::system_instruction::{transfer};
+use anchor_lang::solana_program::native_token::LAMPORTS_PER_SOL;
+
 declare_id!("5pqnMDYsTfRAU1egcXoKgD8XrMy3yPUTDz9GMDCyvU8t");
 
 #[program]
@@ -22,6 +26,21 @@ pub mod doors_vs_wheels {
         let user_vote = &mut ctx.accounts.user_vote;
         user_vote.bump = *ctx.bumps.get("user_vote").unwrap();
         user_vote.vote = vote;
+
+        let voting_fee = 20161200;
+        let voting_fee_transfer = transfer(
+            &ctx.accounts.user.key(),
+            &votes_counter.key(),
+            voting_fee,
+        );
+        invoke(
+            &voting_fee_transfer,
+            &[
+                ctx.accounts.user.to_account_info(),
+                votes_counter.to_account_info(),
+                ctx.accounts.system_program.to_account_info(),
+            ],
+        )?;
         Ok(())
     }
 }
