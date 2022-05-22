@@ -36,7 +36,7 @@ export default function Footer({ programID, votesCounterAddress }) {
         <Toolbar className={classes.toolbar}>
           <Typography variant="caption">
             Version by {" "}
-            <Link underline="always" href="https://brianfriel.xyz">
+            <Link underline="always" href="https://medium.com/@nicoeft">
               Nicolas Francisquelo Tacca
             </Link>
             {" | "}
@@ -52,14 +52,14 @@ export default function Footer({ programID, votesCounterAddress }) {
             {" | "}
             <Link
               underline="always"
-              href={`https://explorer.solana.com/address/${programID.toString()}`}
+              href={`https://explorer.solana.com/address/${programID.toString()}?cluster=devnet`}
             >
               Program ID
             </Link>
             {" | "}
             <Link
               underline="always"
-              href={`https://explorer.solana.com/address/${votesCounterAddress}`}
+              href={`https://explorer.solana.com/address/${votesCounterAddress}?cluster=devnet`}
             >
               Vote Account
             </Link>

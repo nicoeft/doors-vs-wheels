@@ -132,19 +132,7 @@
       }
     }
   ],
-  "errors": [
-    {
-      "code": 6000,
-      "name": "AlreadyVoted",
-      "msg": "User already voted"
-    },
-    {
-      "code": 6001,
-      "name": "AlreadyInitialized",
-      "msg": "Votes counter already initialize"
-    }
-  ],
   "metadata": {
-    "address": "5pqnMDYsTfRAU1egcXoKgD8XrMy3yPUTDz9GMDCyvU8t"
+    "address": "Gy4QMfmmw1oh1Fgna3RNWD6Dh8SSJ5sZzQFUxtuT311x"
   }
 }

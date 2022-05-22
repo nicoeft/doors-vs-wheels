@@ -79,6 +79,7 @@ export default function Intro({
               : classes.button
           }
         />
+          <h3>(Deployed to DEVNET)</h3>
       </Box>
       {(typeof votes.wheels !== "number" ||
         typeof votes.wheels !== "number") &&
@@ -87,14 +88,14 @@ export default function Intro({
             <Typography variant="body1">
               This{" "}
               <Link
-                href={`https://explorer.solana.com/address/${programID.toString()}`}
+                href={`https://explorer.solana.com/address/${programID.toString()}?cluster=devnet`}
                 underline="always"
               >
                 program
               </Link>
               {"'s "}
               <Link
-                href={`https://explorer.solana.com/address/${votesCounterAddress.toString()}`}
+                href={`https://explorer.solana.com/address/${votesCounterAddress.toString()}?cluster=devnet`}
                 underline="always"
               >
                 vote account
