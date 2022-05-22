@@ -1,7 +1,7 @@
 [features]
 seeds = true #set to true to enable automatic PDA derivation in TS builder API
 [programs.localnet]
-doors_vs_wheels = "5pqnMDYsTfRAU1egcXoKgD8XrMy3yPUTDz9GMDCyvU8t"
+doors_vs_wheels = "Gy4QMfmmw1oh1Fgna3RNWD6Dh8SSJ5sZzQFUxtuT311x"
 
 [registry]
 url = "https://anchor.projectserum.com"
